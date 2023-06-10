@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #FFC0CB;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: inherit;
+    }
+
+    header {
+      text-align: right;
+      padding: 10px;
+      background-color: inherit;
+    }
+
+    header a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #000;
+      transition: color 0.3s ease-in-out;
+    }
+
+    header a:hover {
+      color: #8B4513;
+    }
+
+    main {
+      margin: 20px;
+      text-align: justify;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: inherit;
+      border: 2px solid #8B4513;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      background-color: #FFC0CB;
+      padding: 5px;
+    }
+
+    .contact-info {
+      margin-bottom: 20px;
+    }
+
+    .contact-info b {
+      font-weight: bold;
+    }
+
+    .form-container {
+      margin-top: 20px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-container button {
+      background-color: #00BFFF;
+      color: #FFF;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 20px;
+      display: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </header>
+
+    <main>
+      <h1>Contact Info</h1>
+
+      <p>Please contact me during working hours. I don't schedule coffee meetings outside of business hours.</p>
+
+      <div class="contact-info">
+        <p><b>Address:</b> Kraków</p>
+        <p><b>Phone:</b> 748392940</p>
+        <p><b>Email:</b> graficdizajn@gmail.com</p>
+      </div>
+
+      <div class="form-container">
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Email">
+          <input type="text" name="title" placeholder="Title">
+          <textarea name="comment" placeholder="Your Comment"></textarea>
+          <button type="submit">Wyślij</button>
+        </form>
+        <div id="message"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("message").textContent = "Wysłano :)";
+      document.getElementById("message").style.display = "block";
+    });
+  </script>
+</body>
+</html>
